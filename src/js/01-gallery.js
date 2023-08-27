@@ -32,33 +32,33 @@ const renderList = (arr, container) => {
 
 renderList(galleryItems, listEl);
 
-listEl.addEventListener('click', handleListClick);
+// listEl.addEventListener('click', handleListClick);
 
-function handleListClick(event) {
-  event.preventDefault();
-  if (event.target.className !== 'gallery__image') {
-    return;
-  }
+// function handleListClick(event) {
+//   event.preventDefault();
+//   if (event.target.className !== 'gallery__image') {
+//     return;
+//   }
 
-  const currentPicture = event.target.dataset.source;
-  const currentAltPicture = event.target.alt;
+//   const currentPicture = event.target.dataset.source;
+//   const currentAltPicture = event.target.alt;
 
-  const modalInstance = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250,
-    captionPosition: 'bottom',
-    captionSelector: 'img',
-  });
+const modalInstance = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+  captionPosition: 'bottom',
+  captionSelector: 'img',
+});
 
-  modalInstance.show();
+// modalInstance.show();
 
-  document.addEventListener('keydown', onClickEsc);
+//   document.addEventListener('keydown', onClickEsc);
 
-  function onClickEsc(event) {
-    if (event.code === `Escape`) {
-      modalInstance.close();
-      document.removeEventListener('keydown', onClickEsc);
-    }
-  }
-}
+//   function onClickEsc(event) {
+//     if (event.code === `Escape`) {
+//       modalInstance.close();
+//       document.removeEventListener('keydown', onClickEsc);
+//     }
+//   }
+// }

@@ -25,12 +25,14 @@ function reloadPage() {
 
 function onFormSubmit(e) {
   e.preventDefault();
-  console.log({ email: email.value, message: message.value });
+  
 
   if (email.value === '' || message.value === '') {
     return alert('Please fill in all the fields!');
   }
 
+  console.log({ email: email.value, message: message.value });
+  
   localStorage.removeItem(STORAGE_KEY);
   e.currentTarget.reset();
   dataForm = {};
